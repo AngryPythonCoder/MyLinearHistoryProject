@@ -2,14 +2,23 @@
 
 using namespace std;
 
-int fib(int n) {
-    if (n > 2) return fib(n-1) + fib(n-2);
-    else return n-1;
+void fib(int n) {
+    int last = 0, next = 1;
+
+    cout << last << endl;
+    if (n > 1) cout << next << endl;
+    if (n > 2)
+        for (int i = 3; i <= n; i++) {
+            swap(last, next);
+            next += last;
+
+            cout << next << endl;
+        }
 }
 
 int main() {
     cout << "Hello, World!" << endl;
-    cout << fib(10) << endl;
+    fib(10);
 
     return 0;
 }
